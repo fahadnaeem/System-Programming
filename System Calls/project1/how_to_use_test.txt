@@ -1,0 +1,19 @@
+Ahmet Türk	150120107
+Tuğba Özkal	150120053
+--------------------------------------------------------------------------------------------
+Compile:
+$ gcc test.c -o test
+
+Run:
+$ sudo nice -n <nice value> ./test 
+
+nice value must be given greater than 10 to terminate children with parent.
+
+$ Enter value of flag:
+
+Enter flag value 1 to terminate children with parent. Otherwise enter 0.
+
+Press Enter to kill test process.
+If conditions are met, then children are also going to be killed.
+You can see whether or not children are killed with top or htop command. 
+(htop needs to be installed to be used)

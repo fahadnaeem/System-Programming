@@ -1,0 +1,44 @@
+Ahmet Türk	150120107
+Tuğba Özkal	150120053
+--------------------------------------------------------------------------------------------
+sched.h		->		/include/linux/sched.h
+diff changed_sched.h sched.h 
+1468d1467
+< 	int myFlag;
+--------------------------------------------------------------------------------------------
+init_task.h		->		/include/linux/init_task.h
+diff changed_init_task.h init_task.h 
+164d163
+< 	.myFlag		= 0,						\
+--------------------------------------------------------------------------------------------
+syscalls.h		->		/include/linux/syscalls.h
+diff changed_syscalls.h syscalls.h 
+852d851
+< asmlinkage long set_myFlag(pid_t pid, int flag);
+--------------------------------------------------------------------------------------------
+fork.c			->		/kernel/fork.c
+diff changed_fork.c fork.c 
+1686d1685
+< 		p->myFlag = 0;
+--------------------------------------------------------------------------------------------
+exit.c			->		/kernel/exit.c
+diff changed_exit.c exit.c
+619,621d618
+< 			if (current->myFlag == 1 && task_nice(current) > 10) {
+< 				sys_kill(t->pid, SIGKILL);
+< 			}
+--------------------------------------------------------------------------------------------
+Makefile		->		/Makefile
+diff changed_Makefile Makefile 
+540c540
+< core-y		:= usr/ myflag/
+---
+> core-y		:= usr/
+--------------------------------------------------------------------------------------------
+syscall_32.tbl	->		/arch/x86/syscalls/syscall_32.tbl
+diff changed_syscall_32.tbl syscall_32.tbl 
+364d363
+< 355	i386	myflag			set_myFlag
+--------------------------------------------------------------------------------------------
+myflag folder	->		/myflag/
+--------------------------------------------------------------------------------------------

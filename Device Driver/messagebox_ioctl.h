@@ -1,0 +1,12 @@
+#ifndef __MESSAGEBOX_H
+#define __MESSAGEBOX_H
+
+#include <linux/ioctl.h>
+
+#define MESSAGEBOX_IOC_MAGIC  'k'
+#define EXCLUDE_READ    _IO(MESSAGEBOX_IOC_MAGIC, 0)
+#define INCLUDE_READ 	_IO(MESSAGEBOX_IOC_MAGIC,  1)
+#define UNREAD_MESSSAGE_LIMIT _IOW(MESSAGEBOX_IOC_MAGIC,  2, int)
+#define DELETE_MESSAGES _IOW(MESSAGEBOX_IOC_MAGIC,  3, char*)
+
+#endif
